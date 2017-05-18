@@ -1,0 +1,20 @@
+<resources>
+
+    <style name="AppTheme"
+        parent="Theme.AppCompat.Light.NoActionBar"
+        >
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="RedToolbarsStyle"
+        >
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:elevation">8dp</item>
+    </style>
+
+</resources>

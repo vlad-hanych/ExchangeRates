@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipLSwiper_AC"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/llToolbar_AC"
+            layout="@layout/toolbar_currencies"
+            android:layout_width="match_parent"
+            android:layout_height="62dp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvCurrencies_AC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/llToolbar_AC"
+            />
+
+    </RelativeLayout>
+
+</android.support.v4.widget.SwipeRefreshLayout>
