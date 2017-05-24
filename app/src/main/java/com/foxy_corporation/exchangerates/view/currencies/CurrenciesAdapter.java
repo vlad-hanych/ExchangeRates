@@ -11,7 +11,9 @@ import com.foxy_corporation.exchangerates.presenter.currencies.CurrenciesPresent
 import com.foxy_corporation.exchangerates.view.BaseAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Vlad on 15.05.2017.
@@ -23,7 +25,7 @@ class CurrenciesAdapter extends BaseAdapter<String> {
 
     private ArrayList<String> mDownloadedList = new ArrayList<>();
 
-    CurrenciesAdapter(ArrayList <String> arrayList, CurrenciesPresenter presenter) {
+    CurrenciesAdapter(ArrayList<String> arrayList, CurrenciesPresenter presenter) {
         super(arrayList);
 
         mDownloadedList.addAll(super.baseAdapterList);
@@ -42,7 +44,7 @@ class CurrenciesAdapter extends BaseAdapter<String> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         CurrenciesViewHolder myCurrenciesViewHolder = (CurrenciesViewHolder) holder;
 
-        myCurrenciesViewHolder.text.setText(baseAdapterList.get(position));
+        myCurrenciesViewHolder.mText.setText(baseAdapterList.get(position));
 
     }
 
@@ -73,13 +75,14 @@ class CurrenciesAdapter extends BaseAdapter<String> {
     }
 
 
-    private class CurrenciesViewHolder extends BaseViewHolder implements View.OnClickListener {
-        private TextView text;
+    class CurrenciesViewHolder extends BaseViewHolder implements View.OnClickListener {
+        @BindView(R.id.textView)
+        TextView mText;
 
         private CurrenciesViewHolder(View itemView) {
             super(itemView);
 
-            text = (TextView) itemView.findViewById(R.id.textView);
+            ButterKnife.bind(this, itemView);
 
             itemView.setOnClickListener(this);
         }

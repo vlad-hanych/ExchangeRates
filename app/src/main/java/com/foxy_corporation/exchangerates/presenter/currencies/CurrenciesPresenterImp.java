@@ -1,6 +1,6 @@
 package com.foxy_corporation.exchangerates.presenter.currencies;
 
-import com.foxy_corporation.exchangerates.model.api.ApiHelper;
+import com.foxy_corporation.exchangerates.model.api.ApiModelImp;
 import com.foxy_corporation.exchangerates.model.api.CurrenciesApiInterface;
 import com.foxy_corporation.exchangerates.utils.Constants;
 import com.foxy_corporation.exchangerates.view.RefreshableView;
@@ -12,7 +12,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -35,7 +34,7 @@ public class CurrenciesPresenterImp implements CurrenciesPresenter {
     public void onAttachView(RefreshableView refreshableView) {
         mCurrenciesView = (CurrenciesView) refreshableView;
 
-        mGetCurrenciesCB = ApiHelper.getInstance().createService(CurrenciesApiInterface.class).getCurrencies();
+        mGetCurrenciesCB = ApiModelImp.getInstance().createService(CurrenciesApiInterface.class).getCurrencies();
 
         loadCurrencies();
     }

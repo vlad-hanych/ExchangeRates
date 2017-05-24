@@ -1,6 +1,6 @@
 package com.foxy_corporation.exchangerates.presenter.exchange_rates_support;
 
-import com.foxy_corporation.exchangerates.model.api.ApiHelper;
+import com.foxy_corporation.exchangerates.model.api.ApiModelImp;
 import com.foxy_corporation.exchangerates.model.api.ExchangeRatesApiInterface;
 import com.foxy_corporation.exchangerates.utils.Constants;
 import com.foxy_corporation.exchangerates.view.RefreshableView;
@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.List;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -39,7 +38,7 @@ public class ExchangeRatesSupportPresenterImp implements ExchangeRatesSupportPre
     public void onAttachView(RefreshableView refreshableView) {
         mExchangeRatesSupportView = (ExchangeRatesSupportView) refreshableView;
 
-        mExchangeRatesApiInterface = ApiHelper.getInstance().createService(ExchangeRatesApiInterface.class);
+        mExchangeRatesApiInterface = ApiModelImp.getInstance().createService(ExchangeRatesApiInterface.class);
 
         loadExchangeRatesForCurrency();
     }

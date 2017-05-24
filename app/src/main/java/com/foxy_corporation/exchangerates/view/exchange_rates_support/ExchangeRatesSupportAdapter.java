@@ -12,6 +12,9 @@ import com.foxy_corporation.exchangerates.view.BaseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by Vlad on 15.05.2017.
  */
@@ -30,17 +33,18 @@ class ExchangeRatesSupportAdapter extends BaseAdapter<String> {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ((ExchangeRatesViewHolder) holder).text.setText(baseAdapterList.get(position));
+        ((ExchangeRatesViewHolder) holder).mText.setText(baseAdapterList.get(position));
     }
 
 
-    private class ExchangeRatesViewHolder extends BaseViewHolder {
-        private TextView text;
+    class ExchangeRatesViewHolder extends BaseViewHolder {
+        @BindView(R.id.textView)
+        TextView mText;
 
         private ExchangeRatesViewHolder(View itemView) {
             super(itemView);
 
-            text = (TextView) itemView.findViewById(R.id.textView);
+            ButterKnife.bind(this, itemView);
         }
     }
 }

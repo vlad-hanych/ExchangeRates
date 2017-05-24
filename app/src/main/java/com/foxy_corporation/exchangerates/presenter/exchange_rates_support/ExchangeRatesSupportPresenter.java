@@ -6,6 +6,6 @@ import com.foxy_corporation.exchangerates.presenter.BasePresenter;
  * Created by Vlad on 16.05.2017.
  */
 
-interface ExchangeRatesSupportPresenter extends BasePresenter {
+public interface ExchangeRatesSupportPresenter extends BasePresenter {
     void loadExchangeRatesForCurrency();
 }
