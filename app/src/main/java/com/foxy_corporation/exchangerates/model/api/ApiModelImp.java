@@ -17,7 +17,7 @@ public class ApiModelImp implements ApiModel {
 
     private Retrofit mRetrofit;
 
-    /// singleton, use Dagger 2
+    /// need local singleton, use Dagger 2
     public static ApiModelImp getInstance() {
         if (instance == null) {
             instance = new ApiModelImp();
